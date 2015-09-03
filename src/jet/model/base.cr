@@ -1,6 +1,4 @@
 require "yaml"
-require "./adapters/postgresql_adapter"
-require "./adapters/mysql_adapter"
 
 module Jet::Model
   class Base
