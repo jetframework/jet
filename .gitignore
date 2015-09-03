@@ -1,1 +1,5 @@
 .crystal/
+.deps/
+.deps.lock
+config/database.yml
+libs/

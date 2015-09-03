@@ -1,4 +1,4 @@
-require "./spec_helper"
+require "./../spec_helper"
 
 describe Jet do
   it "has a valid version number" do

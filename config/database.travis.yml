@@ -1,0 +1,21 @@
+mysql:
+  adapter: mysql
+  host: localhost
+  port: 5432
+  database: test
+  username: travis
+  password:
+postgresql:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  database: test
+  username: postgres
+  password:
+unrecognized_adapter:
+  adapter: unrecognized_adapter
+  host: localhost
+  port: 5432
+  database: test
+  username: travis
+  password:

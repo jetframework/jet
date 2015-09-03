@@ -1,1 +1,8 @@
 language: crystal
+services:
+  - mysql
+  - postgresql
+before_script:
+  - mysql -e 'create database test;'
+  - psql -c 'create database test;' -U postgres
+  - cp config/database.travis.yml config/database.yml
