@@ -1,6 +1,6 @@
-require "mysql"
-require "pg"
 require "yaml"
+require "./adapters/postgresql_adapter"
+require "./adapters/mysql_adapter"
 
 module Jet::Model
   class Base
@@ -21,9 +21,9 @@ module Jet::Model
 
       if PERMITTED_ADAPTERS.includes?(adapter)
         if adapter == "postgresql"
-          connection = PG.connect("postgres://#{username}:#{password}@#{host}:#{port}/#{database}")
+          connection = PostgreSQLAdapter.connect(username, password, host, port, database)
         elsif adapter == "mysql"
-          connection = MySQL.connect(host, username, password, database, port.to_u16, nil)
+          connection = MySQLAdapter.connect(host, username, password, database, port.to_u16)
         end
         return connection
       else
